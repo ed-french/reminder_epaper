@@ -209,12 +209,12 @@ void drawScreen()
   // display.setFont(&FreeMonoBold12pt7b);
   display.setFont(&FreeSans12pt7b);
   
-  display.setCursor(0,25);
+  display.setCursor(0,18);
   // display.print("Time:");
   // display.setFont(&FreeMonoBold24pt7b);
   // display.setCursor(0,60);
   // display.printf("%02d:%02d:%02d",hour,minute,second);
-  display.printf("Now   %02d:%02d\nTime up%02d:%02d\n",hour,minute,timer_hours,timer_minutes);
+  display.printf("Now       %02d:%02d\nTime up %02d:%02d\n",hour,minute,timer_hours,timer_minutes);
   // Calculate time remaining
   int32_t total_seconds_now=hour*3600+minute*60+second;
   int32_t total_seconds_set=settime_hour*3600+settime_minute*60+settime_second;

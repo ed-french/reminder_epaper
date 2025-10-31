@@ -222,7 +222,7 @@ void drawScreen()
   int32_t total_seconds_left=total_seconds_timer-total_seconds_now;
   if (total_seconds_left>0)
   {
-    display.printf("Left %02d:%02d:%02d",total_seconds_left/3600,(total_seconds_left%3600)/60,(total_seconds_left%3600)%60);
+    display.printf("Left   %02d:%02d:%02d",total_seconds_left/3600,(total_seconds_left%3600)/60,(total_seconds_left%3600)%60);
   }
   display.setCursor(0, display.height() - 35);
   display.drawRect(0, display.height() - 35, display.width(), 35, GxEPD_BLACK);

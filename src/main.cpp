@@ -214,7 +214,7 @@ void drawScreen()
   // display.setFont(&FreeMonoBold24pt7b);
   // display.setCursor(0,60);
   // display.printf("%02d:%02d:%02d",hour,minute,second);
-  display.printf("Now       %02d:%02d\nTime up %02d:%02d\n",hour,minute,timer_hours,timer_minutes);
+  display.printf("Now         %02d:%02d\nTime up   %02d:%02d\n",hour,minute,timer_hours,timer_minutes);
   // Calculate time remaining
   int32_t total_seconds_now=hour*3600+minute*60+second;
   int32_t total_seconds_set=settime_hour*3600+settime_minute*60+settime_second;
@@ -222,7 +222,7 @@ void drawScreen()
   int32_t total_seconds_left=total_seconds_timer-total_seconds_now;
   if (total_seconds_left>0)
   {
-    display.printf("Left   %02d:%02d:%02d",total_seconds_left/3600,(total_seconds_left%3600)/60,(total_seconds_left%3600)%60);
+    display.printf("Left     %02d:%02d:%02d",total_seconds_left/3600,(total_seconds_left%3600)/60,(total_seconds_left%3600)%60);
   }
   display.setCursor(0, display.height() - 35);
   display.drawRect(0, display.height() - 35, display.width(), 35, GxEPD_BLACK);

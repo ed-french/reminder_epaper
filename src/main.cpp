@@ -22,6 +22,8 @@
 #include <Fonts/FreeMonoBold18pt7b.h>
 #include <Fonts/FreeMonoBold24pt7b.h>
 #include <Fonts/FreeSans9pt7b.h>
+#include <Fonts/Picopixel.h>
+#include <Fonts/FreeSans12pt7b.h>
 
 // #include <Fonts/FreeMono9pt7b.h>
 // #include <Fonts/Org_01.h>
@@ -197,19 +199,22 @@ void drawScreen()
   display.fillScreen(GxEPD_WHITE);
   display.setTextColor(GxEPD_BLACK);
   
-    display.setFont(&TomThumb);
+    display.setFont(&FreeMonoBold9pt7b);
   //display.setCursor(180,121);
-  display.setCursor(5,121);
-  display.printf("Batt:%.2fv ,",3.3*analogRead(BATTERY_LEVEL_PIN)/2048);
+  display.setCursor(display.width()-60,12);
+  // display.setTextSize(2);
+  display.printf("%.2fv ,",3.3*analogRead(BATTERY_LEVEL_PIN)/2048);
+  // display.setTextSize(1);
   // display.printf("Last upload: %s",last_upload);
-  display.setFont(&FreeMonoBold12pt7b);
+  // display.setFont(&FreeMonoBold12pt7b);
+  display.setFont(&FreeSans12pt7b);
   
   display.setCursor(0,25);
   // display.print("Time:");
   // display.setFont(&FreeMonoBold24pt7b);
   // display.setCursor(0,60);
   // display.printf("%02d:%02d:%02d",hour,minute,second);
-  display.printf("Now       %02d:%02d\nTimer set %02d:%02d\n",hour,minute,timer_hours,timer_minutes);
+  display.printf("Now   %02d:%02d\nTime up%02d:%02d\n",hour,minute,timer_hours,timer_minutes);
   // Calculate time remaining
   int32_t total_seconds_now=hour*3600+minute*60+second;
   int32_t total_seconds_set=settime_hour*3600+settime_minute*60+settime_second;
